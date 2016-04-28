@@ -1,0 +1,73 @@
+\documentclass[11pt]{article}
+% From the requirements: Font size to be used is Arial/11pt.
+\usepackage{fontspec}
+\usepackage{hyperref}
+\setmainfont{Arial}
+
+\begin{document}
+
+\title{HiVR Product Vision (Draft)}
+\author{
+	Adriaan de Vos - addevos - 4422643\\
+	Boris Schrijver - brschrijver - 4315332\\
+	Carlos Brunal - cbrunal - 4002725\\
+	Leon Hoek - ljhoek - 4021606\\
+	Wim de With - wdewith - 4295277
+}
+\date{\today}
+
+\maketitle
+
+\begin{abstract}
+   The product will consist of an interactive map that the user, a therapist, will use to manipulate a virtual world in which a patient is receiving treatment for overcoming anxieties.
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+
+
+%1 who is going to buy the product?
+\section{Who is the target customer?}
+	The CleVR department at Yes!Delft has instructed HiVR to write an extension for their Virtual Reality environments.
+    We are to provide a comprehensible interface for therapists working with their VR Simulation software.
+   
+\section{Which customer needs will the product address?}
+The software is targeted towards medical specialists that wish to use the CleVR therapy software suite. The main focus is to make an interface as user friendly as possible without limiting treatment options. The interface will provide an overview of where the patient is situated in the VR world and also provide many tools that can aid the therapy sessions to the specialist's liking.
+
+%2  Which product attributes are crucial to satisfy the selected needs, and therefore to the success of the product?
+\section{Which attributes are crucial for the success of the product?}
+	The customer identified five major attributes that they deem will determine the success of this project. They want their software to retain:       
+    
+    \subsection{Intuitive Use}
+    It is important for the therapist to quickly see up to date information on the location of objects and actors in the 3D world, as well as the moods of actors, the field of vision of the patient and more, to quickly determine triggers for the patients. It should also be quick and simple for the therapist to manipulate the virtual world according to those triggers. 
+    
+    \subsection{Performance}    
+    The existing technology runs at an frame rate of 90 frames per second. Each frame has just more than 10 ms to render. We, as the development team, should limit the time needed for each frame to update the map/world as much as possible to keep the program running smoothly. This is of vital importance to the treatment of the patients because any delay in performance may break immersion and cause nausea.
+    
+    \subsection{Seamless Interaction}
+    Closely related to the attributes Intuitive Use and Performance is the concept of Seamless Interaction. The response time of all user-interface elements should be as quick as necessary, providing smooth animations and so preventing erroneous situations e.g. The therapist clicking a moving icon on the map by mistake. In addition, sudden jumps by moving icons should definitely be avoided. generally speaking, we are talking about basic interaction design guidelines e.g quick response time and feedback by the software, loading screens where needed, keep human error into account etc.
+    
+    \subsection{Scaling}
+     The environment provided by CleVR is minimalist and less resource-intensive than the actual environment CleVR ships to its customers. While it is convenient for us when developing our product in this environment, performance-issues may arise when migrating our software to the actual environment.
+     %Others features like Touchscreen readiness or high fidelity graphical effects are not a must but definitely a plus. <-(why is this here?)
+    
+    \subsection{Extensibility}
+    The software is to be implemented with future growth in consideration. The representatives of CleVR expressed the need for the software to be free of licensed libraries and also that it may be upgrade-able in the future. We at HiVr are making a foundation for future developers.
+    Focus points for future upgrades are different kind of maps, other (interactive) objects, new emotions that actors may display and touch-technology.
+        
+%3   , both from competitors and the same company? What are the product’s unique selling points?
+\section{How does the product compare against existing products?}
+There is a surprisingly lack of products for this market, the mainstream market is focusing mainly on entertainment such as gaming or multimedia, thankfully with the launch of popular VR headsets like the HTC VIVE\footnote{\url{https://www.htcvive.com/eu/}} and the Oculus Rift\footnote{\url{https://www.oculus.com/en-us/}} this may pave the way for more applications like our VR Therapy software.
+\newline
+There are universities (such as USC\footnote{\url{http://ict.usc.edu/prototypes/pts/}} in southern California ) that are also developing similar products, but these projects are more research based (in labs or university research facilities) and not necessarily intended as a market product.
+
+This is what is unique about CleVR, the goal is to create software that can be sold to specialists, software that is easy to setup, easy to maintain and an easy to use. 
+
+\section{What is the target timeframe and budget to develop and launch the product?}
+	We are working an estimate of 250 hours each on this project, in a timeframe of 9 weeks.
+	
+
+
+\end{document}
