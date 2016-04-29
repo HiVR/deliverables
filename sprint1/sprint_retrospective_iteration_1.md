@@ -16,11 +16,11 @@ Group: HiVR
 | As a developer we want to have our code synchronized with code history | Set-up GitHub repo | Wim | 1 | 1 | Yes | |
 | As a developer we want to have all related non-code files and appointments synchronized | Create google drive folder and invite everyone | Carlos | 1 | 1 | Yes | |
 |  | Create iCal and add everyone to it | Carlos | 1 | 1 | Yes | |
-| As a developer we want to have the right tools for effective collaboration | Configuring given development-tools | Wim | 1 | | No | Has to be individual instead of on CI |
+| As a developer we want to have the right tools for effective collaboration | Configuring given development-tools | Wim | 1 | | No | Has to be done individual instead of on CI |
 |  | Research additional tools | All | 2 | 2 | Yes | |
 | As a developer we want to have access to a CI-server, resulting in reliable and clear tests    | Research which CI-server fits best | Wim | 3 | 1 | Yes | |
 |  | Research how Unity/C-sharp will work on CI-server | Wim/Carlos | 2 | 3 | Yes | |
-|  | Installing CI server | Wim/Carlos/Boris | 8 | 3 | Yes | Jenkins job next week |
+|  | Installing CI server | Wim/Carlos/Boris | 8 | 3 | Partly | Jenkins job next week |
 | As a developer we want to have starting knowledge of the languages and tools | Research Unity | All | 2 | | No | |
 |  | Research C-sharp | All | 8 | | No | |
 |  | Research VisualStudio | All | 1 | | No | |
@@ -37,4 +37,4 @@ Reaction: Next week we should plan more accordingly, less time.
 Reaction: More discipline, make a personal planning
 
 ## Adjustments for the next Sprint
-We should keep account that the most of the needed information from third parties is given to us at a later time.
+We should keep account that most of the needed information from third parties is given to us at a later time.
