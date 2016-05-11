@@ -46,7 +46,7 @@ Informatics for \gls{CleVR}. The architecture of the system will be explained in
     Throughout the project we will maintain design goals named; "Performance", "Ease of use" and "Extensibility". They'll be explained in each subsection respectively.
 
         \subsubsection{Performance}
-        The existing technology runs at an frame rate of 90 frames per second. Each frame has just more than 10 ms to render. We, as the development team, should limit the time needed for each frame to update the map/world as much as possible to keep the program running smoothly. This is of vital importance to the treatment of the patients because any delay in performance may break immersion and cause nausea.
+        The existing technology runs at an frame rate of 90 frames per second. Each frame has just more than 1 ms to render. We, as the development team, should limit the time needed for each frame to update the map/world as much as possible to keep the program running smoothly. This is of vital importance to the treatment of the patients because any delay in performance may break immersion and cause nausea.
         
         \subsubsection{Ease of use}
        The interactive map should require little maintenance from the therapist during treatment. The focus of the therapist while giving treatment should be on the patient, not troubleshooting with the tools.
@@ -80,7 +80,7 @@ This section discusses the architecture of the system. We will briefly describe 
     
     % 2.4 Concurrency (processes, shared resources, communication between processes, deadlocks prevention)
     \subsection{Concurrency}
-    Each frame has just more than 10 ms to render. We should limit the time needed for each frame to update the map/world as much as possible to keep the program running smoothly. We discussed a window of 1ms to send and receive all our commands. 
+    Each frame has just more than 1 ms to render. We should limit the time needed for each frame to update the map/world as much as possible to keep the program running smoothly. We discussed a window of 1 ms to send and receive all our commands. 
     We still have to determine our lag limit, but ideally something low enough that the user itself wont notice. 
     
 \newpage
