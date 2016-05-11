@@ -1,0 +1,204 @@
+\documentclass[11pt]{article}
+% From the requirements: Font size to be used is Arial/11pt.
+\usepackage{fontspec}
+\usepackage{hyperref}
+\setmainfont{Arial}
+\usepackage{glossaries}
+\usepackage{graphicx}
+\usepackage{csquotes}
+
+\makeglossaries
+
+\newglossaryentry{Unity}
+{
+    name=Unity,
+    description={Unity is a game development platform, can be used to make 3D environments. \url{https://unity3d.com/unity}}
+}
+
+\newglossaryentry{CleVR}
+{
+    name=CleVR,
+    description={VR development team at Yes!Delft, focused on virtual reality therapy solutions. \url{http://clevr.net/}}
+}
+
+\newglossaryentry{MoSCoW}
+{
+    name=MoSCoW,
+    description={Must have, Should have, Could have, and Would like but won't get. Clegg, Dai; Barker, Richard (2004-11-09). Case Method Fast-Track: A RAD Approach. Addison-Wesley.}
+} 
+
+\begin{document}
+
+\title{HiVR Product Planning}
+\author{
+	Adriaan de Vos - addevos - 4422643\\
+	Boris Schrijver - brschrijver - 4315332\\
+	Carlos Brunal - cbrunal - 4002725\\
+	Leon Hoek - ljhoek - 4021606\\
+	Wim de With - wdewith - 4295277
+}
+\date{\today}
+
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+In this document we will provide an outline of the work to be for the HiVR project. The HiVR project will provide solutions to problems provided by \gls{CleVR}. The project will mainly focus on creating an interactable map. This interactable map will display a virtual environment in which a patient is standing, and provide controls to a therapist to interact with. The following will be discussed: first, a MoSCoW model to determine which features are needed. Second, a product backlog with global user stories based on the features that are needed. Third, a release plan according to what should be finished following the road map. Last, a description of when a feature is done, when a sprint is done and when a release is done.
+\newline
+\newline
+Quoted a summary of \gls{CleVR}:
+\begin{displayquote}
+CleVR specializes in creating complete and customized Virtual Reality (VR) solutions. CleVR delivers interactive custom built VR software and hardware for a wide range of purposes in the (Mental) Health Care sector (such as fear of heights, fear of flying, Psychosis and Social Phobia) and training sector, where the user is able to interact with the computer in a natural and intuitive way. These products are combined in a unique package that our customers can use straight away.
+\end{displayquote}
+
+\section{Product}
+
+	\subsection{The Stakeholder Input}
+    During the meeting with CleVR three points came forward that they deemed important to the success of this product. \\
+    Firstly, CleVR gave us a presentation, including a video, in which they explained their requirements and when they considered the product to be successful. The video featured a proof of concept map. It showed moving icons, representing actors, static icons representing items such as benches and television screens. It also showed the position and direction of view of the patient in the virtual world. The way the map was controller was by using the mouse. Almost every action could be accomplished with at most 2 mouse-clicks. They were reluctant to change the map design and the user interface and would like us to adhere closely to it, as it was developed by a expert in creating graphical concepts.
+    \newline
+    Secondly, they stressed that the product should not negatively impact the performance of the already existing Virtual Reality software. The whole map should not take more than 1ms to render. Any performance issues that the software might cause will remind the patient that the treatment is just a simulation. Which is the opposite effect of what the treatment aims for.
+    \newline
+    Lastly, the software must be properly tested. It is of vital importance that the patients stay immersed in the experience. The software should therefore not crash and not affect the Virtual World in unrealistic ways.
+	\subsection{High level product backlog}
+    The \gls{MoSCoW} model for the project is:\\[\baselineskip]
+    \begin{tabular}{ l l }
+		Must have
+            & Connect with \gls{Unity} VR environment running on another PC \\
+        	& Generate map from Unity VR environment \\
+            & Display static elements of the Unity VR environment \\
+            & Display dynamic elements of the Unity VR environment \\
+            & No performance impact on the Unity VR environment \\
+            & Smooth movement on the map \\
+            & Show subsection of the map located around the user \\
+    	Should have
+        	& Change the characteristics of characters in the Unity VR environment \\
+        	& Move characters in the Unity VR environment \\
+        	& Change TV screen in Unity VR environment \\
+            & Play sounds in Unity VR environment \\
+            & Small map displaying the entire Unity VR environment \\
+    	Could have
+        	& Touch screen support for the GUI \\
+        	& Create scenarios in advance \\
+            & Zooming in the map \\
+            & Display trajectories of moving characters \\
+            & An option to release the focus from the patient and freely move around on the map \\
+            & logbook of commands given to characters for therapist \\
+    	Won't have
+        	& Realistic graphics \\
+        	& Recording and playing back the events on the map \\
+            & Connecting with more than one Unity VR environment at the same time \\
+            & Connecting more than one client to the Unity VR environment at the same time \\
+	\end{tabular}
+    \newline
+    \newline
+    We have reordered our priorities to match the wishes of the stakeholder.Starting with the importance of all items that have to do with stability and performance. We tried to cut back on introducing too many features as it may jeopardize the stability of the software.
+    \newline
+    There are important sub-items that can only be implemented after some main items: For example, \textit{move characters in the Unity VR environment}, which we rated 'should have', can only be implemented after the item \textit{Display dynamic elements of the Unity VR environment} is implemented, which is rated 'must have'.
+    \newline
+    Improving the user experience takes priority after the core functionality has been implemented. It is less important for the therapist to be able to zoom than it is to see what is happening on the rest of the map.
+    \newline
+    The product does not need realistic graphics, as the patient won't come into contact with the software. It is better to keep the graphics simple, this in turn keeps a clear overview of what is happening to the patient in the virtual world. We also don't expect having several patients in the same world at once. Therefore we decided to implement our software with only one patient in mind.
+    
+    \subsection{Road map}
+    
+    Our road-map looks like this:
+    \newline
+	\includegraphics[width=\textwidth]{planning.png}
+    \newpage
+    
+	Our ultimate product plans are to:
+    \newline
+    \begin{tabular}{ l l }
+        \hline
+        1& Document  our goals and developments process\\
+        2& Create a Simple UI to display a Unity map\\
+        3& Have proper protocol specifications to connect the UI with Unity environments \\
+        4& Be able to render the map dynamically from Unity\\
+        5& Make the UI interactive, able affect the Unity environment\\
+        6& Add features like touch screen ready or a mini-map for ease of use\\
+        7& Have stable, bug-free software launch\\
+     	8& Successfully meet the requirements of our investor\\
+	\end{tabular}
+  
+\section{Product Backlog}
+	\subsection{User stories of features}
+    
+    \begin{itemize}
+		\item As a therapist I want to see a clear visual overview of the virtual world
+        \item As a therapist I want to be able to see the objects in the virtual world
+        \item As a therapist I want to be able to see the moving objects in the virtual world
+        \item As a therapist I want to be able to see trajectories of moving objects in the virtual world
+        \item As a therapist I want to be able to see the patients location in the virtual world
+        \item As a therapist I want to be able to see the patients field of view in the virtual world
+        \item As a therapist I want to be able to see the state of objects in the virtual world
+        \item As a therapist I want to be able to manipulate the state of objects in the virtual world
+        \item As a therapist I want to be able to see which objects can be manipulated
+        \item As a therapist I want to be able to touch objects to manipulate them
+        \item As a therapist I want to change what the patient can see on the television
+        \item As a therapist I want to play sounds in the virtual world
+        \item As a therapist I want to play sounds from a specified location in the virtual world
+        \item As a therapist I want to see a small mini-map displaying the entire map without the small details
+        \item As a therapist I want to be able to change the walking direction from the actors
+        \item As a therapist I want to see the trajectories that actors will move to
+        \item As a therapist I want the visual overview to update 30 times or more per second to make it smooth
+        \item As a therapist I want the majority of the interface to be supported without a keyboard
+		\item As a patient I don't want my immersion to be interrupted
+        \item As a patient I don't want to notice any bad performance caused by the visual overview of the therapist
+        \item As a patient I want to see an environment that can be influenced by the therapist
+        \item As a patient I don't want to see a big or immediate difference when the therapist changes something
+        \item As CleVR I want to be able to extend the functionality of the software
+        \item As CleVR I want to be able to run the map software on another PC than the VR environment
+        \item As CleVR I want the visual overview to have a small or not noticeable performance impact on the Unity environment
+        \item As CleVR I want to have good performance if we add more then 100 objects
+        \item As CleVR I want to have at least 80\% test coverage of the new code
+        \item As CleVR I don't want to use more then 5 external Unity packages because of license issues
+	\end{itemize}
+    
+    \subsection{Initial release plan}
+    The releases are planned from week 2 of quarter 4 which starts at April 18 till week 9 of quarter 4 which starts at June 14.\\[\baselineskip]
+    \begin{tabular}{ l l }
+		Week & Task \\
+        \hline
+        1 & Documentation and planning \\
+        2 & Simple UI to display map \\
+          & Design documents \\
+        3 & Communication protocol specification \\
+          & Unity plugin that can be connected with \\
+          & Render a map with static elements in the UI \\
+        4 & Protocol implementation in both the UI and the Unity plugin \\
+        5 & Render dynamic elements on the map \\
+          & Option to interact with elements on the map \\
+        6 & A small map displaying the entire environment \\
+          & Touch screen support \\
+        7 & Feature complete final release \\
+        8 & Feature complete bug free release and final report \\
+	\end{tabular}
+
+\section{Definition of done}
+
+	\subsection{Backlog items}
+	A feature is done when the following points are met:
+	\begin{itemize}
+		\item All criteria of the corresponding user story are met
+		\item Continuous integration build is successful
+		\item 80\% or higher test coverage
+	    \item Can be demonstrated to other team members without problems
+		\item Approved by two other team members after manual functional test
+	    \item Can be merged into current master
+	    \item Code is documented and no Visual Studio extensions warnings
+	\end{itemize}
+
+	\subsection{Sprint}
+	A sprint is successful when all items in the backlog are done according to the preceding definition and no critical bugs exist in the issue tracker.
+
+	\subsection{Release}
+	A release is done when \gls{CleVR} gets the demo and documentation.
+
+\section{Glossary}
+\printglossary[title=]
+
+\end{document}
