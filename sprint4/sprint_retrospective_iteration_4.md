@@ -2,6 +2,7 @@
 
 Context Project: Health Informatics  
 Group: HiVR
+
 | User story   | Task     | Task Assigned to | Estimated Effort per Task | Actual Effort per Task | Done | Notes |
 | :----------- | :------- | :--------------- | :------------------------ | :--------------------- | :--- | :---- |
 | As a user we want to see how to use the repositories | Update the README files | Adriaan | 1 | 2 | Yes | */readme |
