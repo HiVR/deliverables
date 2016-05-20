@@ -4,7 +4,7 @@ Context Project: Health Informatics
 Group: HiVR
 
 | User story | Task | Member Responsible for the Task | Task Assigned to | Estimated Effort per Task | Priority(A-E) | Reason |
-| :--------: | :--: | :-----------------------------: | :--------------: | :-----------------------: | :-----------: | :---- |
+| :--------- | :--- | :------------------------------ | :--------------- | :------------------------ | :------------ | :---- |
 | As a developer we want to see how to use the repositories | Job to run unit tests and collect results | Boris | Boris | 3 | A | CI is very important for developing. Automating running tests is also very important. |
 | As a therapist we want to see a static map of a 3D environment | Make a View that can render various objects (like walls, benches and actors) on screen | Leon | Leon/Wim | 10 | A | This is the basic requirements that CleVR want. A static map. It is important that we finish it this week. |
 |  | Make a ViewModel that feeds those objects to the View | Wim | Wim/Leon | 16 | A | |
