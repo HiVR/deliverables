@@ -1,0 +1,183 @@
+% From the requirements: Font size to be used is Arial/11pt.
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{glossaries}
+\usepackage{graphicx}
+\setmainfont{Arial}
+
+%glossary Items
+\makeglossaries
+
+\newglossaryentry{Unity}
+{
+    name=Unity,
+    description={Unity is a game development platform, can be used to make 3D environments. \url{http://unity3d.com/unity}}
+}
+
+\newglossaryentry{CleVR}
+{
+    name=CleVR,
+    description={VR development team at Yes!Delft, focused on virtual reality therapy solutions. \url{http://clevr.net/}}
+}
+
+%Document begins here
+\begin{document}
+\title{	
+		\vspace{-3.5cm}
+		\includegraphics{Images/Logo_Zwart-goud.png} 
+		\newline Context Project - HiVR Final Report DRAFT
+}
+\author{
+	Adriaan de Vos - addevos - 4422643\\
+	Boris Schrijver - brschrijver - 4315332\\
+	Carlos Brunal - cbrunal - 4002725\\
+	Leon Hoek - ljhoek - 4021606\\
+	Wim de With - wdewith - 4295277
+}
+\date{\today}
+
+\maketitle
+%abstract
+\begin{abstract}
+This document reports the activities performed during the HiVR context project. It focuses on lessons learned and identifies the areas of improvement during the development process, integration and user-tests for the purpose of developing a map that represents a virtual world where patients receiving exposure therapy to overcome anxieties.\cite{virtualvsrealtrial}.
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+%This deliverable is the main document about the developed, implemented, and validated software product. It will present the main functionalities of the product and discuss to which extent they satisfy the needs of the user. For this purpose, an evaluation of the functionalities performed using a well-justified method needs to be presented, as well as a failure analysis – where the product does not perform as needed. Furthermore, the Final Report will also contain a section describing the HCI module that was realized for the user interaction with the developed solution. This section will reveal what the students learned in the Interaction Design course and will be evaluated by the corresponding lecturer. The grade for Interaction Design will be assigned based on the content of this section (see Section 8 for assessment process and criteria). Finally, an outlook will be given regarding the possible improvements in the future and the strategy to achieve these improvement.
+
+%Note that this report should not repeat the material from Product Vision, but should complement it by providing results as response to expectations and strategy described in the Product Vision document.
+
+%The TOC of the Final Report will be as follows:
+
+% 1. Introduction, including a brief problem description and end-user's requirements
+% 2. Overview of the developed and implemented software product
+
+% 4. Description of the developed functionalities
+% 5. Special section on interaction design (development of the HCI module)
+% 6. Evaluation of the functional modules and the product in its entirety, including the failure analysis
+% 7. Outlook
+
+
+
+%introduction
+\section*{Introduction}
+The context project is a 10 week project with an agile software development process, called scrum, 
+alongside a set of software engineering practices. Our job was to to make a map, that represents a 3d environment from 
+a top down view. This report describes our work and techniques used during the project to
+deliver the required system incrementally, generating feedback from stockholders and instructors, and feeding this back into every iteration.
+
+
+
+% HD 1
+\section{Product overview}
+As can be seen in this diagram, the HiVR map is composed of a number of components
+and services, each integrated and tested individually and as a whole.
+Figure 1 shows the high-level architectural vision of HiVR.
+
+
+\section{The User}
+\subsection{Who will use it?}
+	The HiVR map is an extension to the already existing CleVR Virtual reality Software for Exposure Therapy.
+    The software is targeted towards medical specialist ( therapists ) that wish to use or include exposure therapy in their sessions.
+\subsection{Usage situations}
+	for example personas, scenarios, language, analysis.
+
+% HD 2
+\section{Context inquiry //TODO}
+Human computer interaction literature.
+\subsection{Claim analysis}
+\begin{enumerate}
+    \item //TODO We envision our product to be used in one of the following ways:
+
+		\begin{enumerate}
+         \item The therapist will start up the application already installed for him/her by clicking on a Desktop Icon(TODO). He or she will be greeted with a welcome screen containing the connection information, which is already present from last time the user connected with Unity(TODO). After connecting to the running Unity server a screen will be shown showing an overview of the map. The visible part of the map will automatically center around the location of the player(TODO). The therapist will look at the map to see where the patient is in the Virtual Reality world, and may base some parts of the treatment on this information. When the treatment is over, the therapist will click the disconnect menuitem in the menu(TODO) and optionally close the application by clicking on the red cross in the topright corner. 
+         \item The therapist will start up the application already installed for him/her by clicking on a Desktop Icon(TODO). He or she will be greeted with a welcome screen containing the connection information, without an ip-address already filled in for them. The therapist will panick and fill in non-sense, hoping this might make the application work. The application will give an error message upon processing this non-sense input and let the users try again(TODO). It will also advise the user on the second time doing it wrong to contact someone from IT(TODO).
+         \item The therapist will start up the application already installed for him/her by clicking on a Desktop Icon(TODO). He or she will be greeted with a welcome screen containing the connection information, which is already present from last time(TODO). After connecting to the running Unity server a screen will be shown showing an overview of the map. The visible part of the map will automatically center around the location of the player. The therapist will look at the map to see where the patient is in the Virtual Reality world, and may base some parts of the treatment on this information. Halfway the treatment the therapist will decide to load another Scene. The map detects that it has no connection anymore with Unity and will disconnect and show the connection screen again(TODO) so that the users can connect again when a new scene is loaded in Unity. 
+         \end{enumerate}
+         Two things are most noticable in the above scenarios. The first is that users might have problems with knowing which IP to connect to. The second is that users might try to connect with a new Unity Scene while still connected to our application.
+	Instructions for report:  
+    Develop a set of scenarios that describe how people will use a product.  
+		Extract key features from user scenarios that will have an important effect on your users. For example, if you were planning on using a new type of control to find 		objects in huge lists (e.g., an elliptical browser), you might want to do a claims analysis on this feature.\item Prioritize your list of key features.
+		Generate positive and negative claims for high-priority key features from the perspective of the stakeholders you listed in Step 1. You can do this in several ways:
+		Brainstorming
+		Interviews with users and other stakeholders
+		Reviewing literature and reviews on similar features in other products
+		Using a set of questions that help evoke possible consequences
+		Using the “Yes, but…” format where a feature is described and you say, “Yes, but would it work for users who are disabled?”
+
+\item Take the most important key feature from your list of claims and consider design trade-offs that will decrease the impact of negative claims and increase the impact of positive claims.
+\item Repeat this process for the next key feature.
+\end{enumerate}
+
+\subsection{Product Testing (//TODO NEXT WEEK TESTING + RESULTS)}
+We write this making use of the claim analysis.
+
+% Interaction Design, as instructed by Willem Paul
+\section{Interaction Design (//TODO NEXT WEEK TESTING + REULTS)}
+In this are we will address the points give by Willem Paul to update our final report, The tips non-translated as give are given each as their own subsection.
+
+
+\subsection{Methods}
+ 
+What the purpose of the project was and how we handled it.
+In here we will post our results, conclusion and discussion .
+
+(Doesn't make quite a lot of sense to add this in the Method section, conclusion already form the start).
+
+ \subsection{Testing Procedures}
+what tasks did the subject do and why?
+Focus points? , version of the software.
+
+Measurements, what did we measure and hoe?
+time, Measurements
+Where does this data com from ?
+
+Group description, 
+Which kind of people tested it? people with software experience?
+people with experience in the actually application for the program? the actual target group?
+
+ \subsection{Results}
+ 
+ Graphs and sheet derived from out collected data, 
+ explanations of each is very important as-well. also important what the people did with he software and reactions about it. 
+
+\section{ Evaluation of the functional modules and the product in its entirety, including the failure analysis }
+	\subsection{how well it performed}
+    \subsection{program weaknesses}
+    
+\section{ Reflection on the product and process from a software engineering perspective }
+	\subsection{what worked}
+    \subsection{what didn't}
+    
+\section{Conclusion (// TODO GROUP REFLECTION AND ANALISYS OF THE WORK DONE)}
+We are to only write the utmost important points in this section. 
+small part about: hiccups and shortcomings in our project , test group or software.
+Recommendation or hindsight on:
+What can be improved, what was unclear or understandable and what we could do to change this. 
+
+
+\newpage
+
+%bibliography    
+\begin{thebibliography}{9}
+\bibitem{virtualvsrealtrial} 
+Anderson, Page L.; Price, Matthew; Edwards, Shannan M.; et al.
+JOURNAL OF CONSULTING AND CLINICAL PSYCHOLOGY  Volume: 81   Issue: 5   Pages: 751-760   Published: OCT 2013
+\bibitem{vive}
+Vive. (n.d.). Retrieved May 04, 2016, from https://www.htcvive.com/eu/
+\bibitem{oculus}
+Oculus. (n.d.). Retrieved May 04, 2016, from https://www.oculus.com/en-us/
+\bibitem{usc}
+USC University. (n.d.). Retrieved May 04, 2016, from http://ict.usc.edu/prototypes/pts/
+\bibitem{nausea}
+Kim, Y.Y., Kim, E.N., Park,M.J., Park, K.S., Ko, H.D., Kim, H.T.: The application of biosignal
+feedback for reducing cybersickness from exposure to a virtual environment. Presence 17(1),
+1–16 (2008)
+\end{thebibliography}
+	
+\end{document}
