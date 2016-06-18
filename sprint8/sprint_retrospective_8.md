@@ -2,6 +2,7 @@
 
 Context Project: Health Informatics  
 Group: HiVR
+
 | User story   | Task     | Task Assigned to | Estimated Effort per Task | Actual Effort per Task | Done | Notes |
 | :----------- | :------- | :--------------- | :------------------------ | :--------------------- | :--- | :---- |
 | As a team we want to have more people with a thorough understanding of the network so that we ensure its quality | Write Unit Tests for the network| Leon | 10 | 10 |Done | |
